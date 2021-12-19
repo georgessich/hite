@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Montaga&family=Montserrat:wght@400;500;600;700&display=swap');
+
+$fontHeader: 'Montaga', serif;
+$fontDisplay: 'Montserrat', sans-serif;
+$colorDisplay: #212F36;
+$colorLightblue: #B8D4E3;
+$colorButton: #82B5D1;
+$colorYellow: #FFE7A7;
+
+:export {
+    font-header: $fontHeader;
+    font-display: $fontDisplay;
+    color-display: $colorDisplay;
+    color-lightblue: $colorLightblue;
+    color-button: $colorButton;
+    color-yellow: $colorYellow;
+}

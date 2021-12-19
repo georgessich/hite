@@ -1,0 +1,39 @@
+@import '../../../components/variables.module.scss';
+.hero {
+    background-image: url('../../../images/hero.png');
+    background-size: cover;
+    
+    background-position: bottom;
+    background-repeat: no-repeat;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    padding-left: 5%;
+    &__title {
+        font-family: $fontHeader;
+        font-size: 92px;
+        font-weight: 400;
+        color: $colorDisplay;
+        margin-bottom: 8px;
+    }
+
+    &__subtitle {
+        font-size: 24px;
+        margin-bottom: 76px;
+    }
+
+    &__btn {
+        background-color: $colorButton;
+        color: #fff;
+        font-family: $fontDisplay;
+        font-size: 24px;
+        font-weight: 600;
+        text-align: center;
+        padding: 12px 19px;
+        cursor: pointer;
+        border: none;
+        margin-bottom: 100px;
+    }
+}

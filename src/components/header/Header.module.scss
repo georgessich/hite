@@ -1,0 +1,36 @@
+@import '../variables.module.scss';
+
+.header {
+  
+    position: absolute;
+    top: 0;
+    width: 100%;
+    padding-top: 23px;
+    
+    &__container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-left: 2%;
+    }
+    &_left__menu {
+        &-items {
+            display: flex;
+        }
+        &-link {
+            font-size: 16px;
+            font-weight: 400;
+            color:$colorDisplay;
+            margin-right: 70px;
+        }
+    }
+    &_right__menu {
+        &-items {
+            display: flex;
+            
+        }
+        &-link {
+            margin-right: 88px;
+        }
+    }
+}

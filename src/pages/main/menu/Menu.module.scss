@@ -1,0 +1,27 @@
+@import '../../../components/variables.module.scss';
+
+.menu {
+    &__items {
+        display: flex;
+        justify-content: center;
+        gap: 32px;
+        padding-top: 82px;
+        margin-bottom: 82px;
+    }
+    &__item {
+        position: relative;
+    }
+
+    &__link-txt {
+        position: absolute;
+        z-index: 10;
+        color: $colorYellow;
+        font-family: $fontHeader;
+        font-size: 62px;
+        line-height: 89px;
+        top: 50%;  /* position the top  edge of the element at the middle of the parent */
+        left: 50%; /* position the left edge of the element at the middle of the parent */
+    
+        transform: translate(-50%, -50%);
+    }
+}
