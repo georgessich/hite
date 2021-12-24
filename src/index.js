@@ -2,21 +2,23 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
+import {render} from 'react-dom'
 import {
   ApolloClient,
   InMemoryCache,
   ApolloProvider
 } from "@apollo/client";
+import { BrowserRouter } from "react-router-dom";
 const client = new ApolloClient({
   uri: "http://localhost:4000",
   cache: new InMemoryCache(),
 });
 
 ReactDOM.render(
-  <React.StrictMode>
+  <BrowserRouter>
     <ApolloProvider client={client}>
       <App />
     </ApolloProvider>
-  </React.StrictMode>,
+  </BrowserRouter>,
   document.getElementById("root")
 );

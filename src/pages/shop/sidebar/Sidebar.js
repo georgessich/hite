@@ -1,0 +1,87 @@
+import classes from "./Sidebar.module.scss";
+
+const Sidebar = (props) => {
+  const categories = ["Chairs", "Sofas", "Lights"];
+  const materials = ["Metal", "Plastic", "Plywood", "Wood", "Wool"];
+    const handleChange = (e, setFunc, cat) => {
+        if(e.target.checked) {
+            setFunc([...cat, e.target.value]);
+        } else {
+            setFunc(cat.filter (id => id !== e.target.value))
+        }
+    }
+  return (
+    <div className={classes["sidebar"]}>
+      <span className={classes["sidebar__title"]}>Filter</span>
+      <form className={classes["sidebar__form"]}>
+        <div className={classes["sidebar__filter"]}>
+          <span className={classes["sidebar__filter-title"]}>Category</span>
+          {categories.map((category, i) => (
+            <div className={classes["sidebar__filter-container"]}>
+              <input
+                className={classes["sidebar__filter-input"]}
+                type="checkbox"
+                value={category}
+                id={`radio-c${i}`}
+                onChange={(e) => handleChange(e, props.setCategory, props.category)}
+                key={`radio-c${i}`}
+              />
+              <label
+                className={classes["sidebar__filter-label"]}
+                htmlFor={`radio-c${i}`}
+                key={`radio-c${i}1`}
+              >
+                <span>{category}</span>
+              </label>
+            </div>
+          ))}
+        </div>
+        <div className={classes["sidebar__filter"]}>
+          <span className={classes["sidebar__filter-title"]}>Price range</span>
+          <div>
+            <input
+              className={classes["sidebar__filter-number"]}
+              type="number"
+              min="0"
+              max="1200"
+              id="price"
+              name="price"
+            />
+            <span className={classes["sidebar__filter-number--dash"]}>&#8212;</span>
+            <input
+              className={classes["sidebar__filter-number"]}
+              type="number"
+              min="0"
+              max="1200"
+              id="price"
+              name="price"
+            />
+          </div>
+        </div>
+        <div className={classes["sideba__filter"]}>
+          <span className={classes["sidebar__filter-title"]}>Materials</span>
+          {materials.map((material, i) => (
+            <div className={classes["sidebar__filter-container"]}>
+              <input
+                className={classes["sidebar__filter-input"]}
+                type="checkbox"
+                value={material}
+                id={`radio-m${i}`}
+                key={`radio-m${i}`}
+              />
+              <label
+                className={classes["sidebar__filter-label"]}
+                htmlFor={`radio-m${i}`}
+                key={`radio-m${i}1`}
+              >
+                <span>{material}</span>
+              </label>
+            </div>
+          ))}
+        </div>
+      </form>
+    </div>
+  );
+};
+
+export default Sidebar;

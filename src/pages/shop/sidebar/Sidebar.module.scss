@@ -1,0 +1,29 @@
+@import '../../../components/variables.module.scss';
+.sidebar {
+
+    &__title {
+        color: rgba($colorDisplay, .5);
+        font-weight: 600;
+        font-size: 36px;
+    }
+
+    &__filter {
+        &-title {
+            color: $colorDisplay;
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 16px;
+        }
+        &-container {
+            margin-bottom: 8px;
+        }
+        &-number {
+            width: 96px;
+            height: 40px;
+            &--dash {
+                margin:0 24px;
+                font-weight: 600;
+            }
+        }
+    }
+}
