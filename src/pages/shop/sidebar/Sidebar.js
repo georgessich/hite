@@ -46,6 +46,7 @@ const Sidebar = (props) => {
               max="1200"
               id="price"
               name="price"
+              onChange={(e) => props.setPriceMin(e.target.value)}
             />
             <span className={classes["sidebar__filter-number--dash"]}>&#8212;</span>
             <input
@@ -55,6 +56,7 @@ const Sidebar = (props) => {
               max="1200"
               id="price"
               name="price"
+              onChange={(e) => props.setPriceMax(e.target.value)}
             />
           </div>
         </div>
@@ -68,6 +70,7 @@ const Sidebar = (props) => {
                 value={material}
                 id={`radio-m${i}`}
                 key={`radio-m${i}`}
+                onChange={(e) => handleChange(e, props.setMaterials, props.materials)}
               />
               <label
                 className={classes["sidebar__filter-label"]}

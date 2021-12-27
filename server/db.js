@@ -62,7 +62,7 @@ const itemCards = [
     {
       id: 5,
       title: "Alexandre Chair",
-      image: "https://i.imgur.com/nMfpFvC.png",
+      image: "https://i.imgur.com/kq83XkV.png",
       price: "$948",
       materials: ["Plastic", "Plywood"],
       description: [
@@ -122,7 +122,7 @@ const itemCards = [
     {
       id: 9,
       title: "Ashlynn Sofa",
-      image: "https://i.imgur.com/aRY6CKf.png",
+      image: "https://i.imgur.com/6eN5cO7.png",
       price: "$899",
       materials: ["Wool", "Wood"],
       description: [

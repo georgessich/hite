@@ -20,30 +20,56 @@ const GET_ITEMS = gql`
 const Shop = () => {
   const [filteredByCategory, setFilteredByCategory] = useState([]);
   const { loading, error, data } = useQuery(GET_ITEMS, {
-    onCompleted: data => setFilteredByCategory(data.itemCards)
+    onCompleted: (data) => setFilteredByCategory(data.itemCards),
   });
   const [category, setCategory] = useState([]);
-  
+  const [materials, setMaterials] = useState([]);
+  const [priceMin, setPriceMin] = useState();
+  const [priceMax, setPriceMax] = useState();
+  const filteredCards = useMemo(
+    () =>
+      filteredByCategory.filter(
+        (item) =>
+          category.some((category) =>
+            [item.category.category].flat().includes(category)
+          ) ||
+          materials.some((material) =>
+            [item.materials].flat().includes(material)
+          ) || (priceMin < parseInt(item.price.slice(1)) && priceMax > parseInt(item.price.slice(1)))
+          // (category.some((category) =>
+          //   [item.category.category].flat().includes(category)
+          // ) &&
+          //   materials.some((material) =>
+          //     [item.materials].flat().includes(material)
+          //   ))
+            
+      ),
+    [category, materials, filteredByCategory, priceMin, priceMax]
+  );
 
-    const filteredCards = useMemo (() => filteredByCategory.filter((item) =>
-    category.some((category) =>
-      [item.category.category].flat().includes(category)
-    )
-  ), [data, category])
-
-  
-  
   if (loading) return "Loading";
   if (error) return `Error ${error.message}`;
-
+  console.log(data);
   console.log(filteredByCategory);
-  console.log(category);
-
+  console.log(priceMin);
+  console.log(priceMax);
   console.log(filteredCards);
   return (
     <div className={classes["shop"]}>
-      <Sidebar data={data} category={category} setCategory={setCategory} />
-      <ItemGrid data={filteredCards.length > 0 ? filteredCards : filteredByCategory} />
+      <Sidebar
+        data={data}
+        category={category}
+        setCategory={setCategory}
+        materials={materials}
+        setMaterials={setMaterials}
+        priceMin={priceMin}
+        setPriceMin={setPriceMin}
+        priceMax={priceMax}
+        setPriceMax={setPriceMax}
+      />
+      <ItemGrid
+        data={filteredCards.length > 0 ? filteredCards : data.itemCards}
+      />
     </div>
   );
 };
