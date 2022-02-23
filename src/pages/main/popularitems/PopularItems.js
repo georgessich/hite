@@ -1,10 +1,12 @@
 import classes from "./PopularItems.module.scss";
 import { gql, useQuery } from "@apollo/client";
 import banner from "../../../images/banner.png";
+import { NavLink } from "react-router-dom";
 const GET_POPULAR_ITEMS = gql`
   query {
     category(slug: "chairs") {
       itemCards {
+        id
         title
         price
         image
@@ -23,13 +25,13 @@ const PopularItems = () => {
       <span className={classes["popitems-title"]}>Popular Right Now</span>
       <div className={classes["popitems-items"]}>
         {data.category.itemCards.slice(0, 3).map((chair) => (
-          <div className={classes["popitems-item"]}>
+          <NavLink to={`/shop/${chair.id}`} className={classes["popitems-item"]}>
             <div className={classes["popitems-item__img"]}>
               <img src={chair.image} alt="chair" />
             </div>
             <div className={classes["popitems-item__title"]}>{chair.title}</div>
-            <div className={classes["popitems-item__price"]}>{chair.price}</div>
-          </div>
+            <div className={classes["popitems-item__price"]}>${chair.price}</div>
+          </NavLink>
         ))}
         <div className={classes["popitems__banner"]}>
           <img src={banner} alt="banner" className={classes["popitems__banner-img"]} />
@@ -38,7 +40,7 @@ const PopularItems = () => {
         </div>
        
       </div>
-      <a href="#" className={classes["popitems-btn"]}>view all</a>
+      <NavLink to="/shop" className={classes["popitems-btn"]}>view all</NavLink>
     </div>
   );
 };

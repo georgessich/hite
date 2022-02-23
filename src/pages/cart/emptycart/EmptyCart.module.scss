@@ -1,0 +1,23 @@
+@import '../../../components/mixins.module.scss';
+.emptycart {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 50px;
+    gap:20px;
+    margin-bottom: 150px;
+    &__img {
+        width: 150px;
+        height: 150px;
+    }
+
+    &__title {
+        font-size: 32px;
+        font-weight: 700;
+    }
+
+    &__link {
+        @include links;
+    }
+}

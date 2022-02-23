@@ -1,6 +1,8 @@
 @import '../../../components/variables.module.scss';
 .sidebar {
     margin-right: 50px;
+    grid-column: 1/2;
+    align-self: start;
     &__title {
         color: rgba($colorDisplay, .5);
         font-weight: 600;

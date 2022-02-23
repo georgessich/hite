@@ -1,0 +1,18 @@
+@import '../../components/variables.module.scss';
+.totalprice {
+    display: grid;
+    grid-template-columns: repeat(2, min-content);
+    border-top: 1px solid $colorButton;
+    grid-row-gap: 18px;
+    &__subtotal-title,
+    &__shipping-title,
+    &__total-title {
+        grid-column: 1/2;
+        margin-right: 30px;
+    }
+    &__subtotal-num,
+    &__shipping-num,
+    &__total-num {
+        grid-column: 2/3;
+    }
+}

@@ -1,0 +1,22 @@
+@import '../../components/variables.module.scss';
+@import '../../components/mixins.module.scss';
+
+.favourites {
+    
+    &__title {
+        @include titles;
+    }
+
+    &__items {
+        display: grid;
+        grid-template-columns: repeat(3, min-content);
+        justify-content: center;
+        align-items: center;
+        gap:80px;
+    }
+
+    &__item {
+        display: flex;
+        flex-direction: column;
+    }
+}

@@ -1,4 +1,5 @@
 import classes from './LimitedOffer.module.scss';
+import { NavLink } from 'react-router-dom';
 const LimitedOffer = () => {
   return (
     <div className={classes['offer']}>
