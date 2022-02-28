@@ -29,3 +29,30 @@
     width: 100%;
   }
 }
+
+
+@mixin recentTitle {
+  align-self: flex-start;
+  font-family: $fontHeader;
+  font-size: 48px;
+  color: $colorButton;
+  margin-top: 20px;
+  margin-bottom: 48px;
+  grid-column: 1/4;
+  &:before {
+      position: absolute;
+      content: "";
+      height: 6px;
+      background-color: $colorYellow;
+      width: 72px;
+      
+  }
+}
+
+@mixin viewbtn {
+  grid-column: 3/4;
+  padding-bottom: 16px;
+  border-bottom: 6px solid #FFE7A7;
+  color: $colorDisplay;
+  margin-bottom: 64px;
+}

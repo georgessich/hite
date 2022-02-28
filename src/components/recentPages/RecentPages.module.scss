@@ -1,0 +1,47 @@
+@import "../../components/variables.module.scss";
+@import "../../components/mixins.module.scss";
+.recently {
+  padding-left: 15%;
+  display: grid;
+  justify-content: flex-start;
+  align-items: center;
+  &__title {
+    @include recentTitle;
+    grid-row: 1/2;
+    margin-bottom: 0;
+  }
+
+  &__items {
+    display: flex;
+    padding-top: 20px;
+    grid-gap: 40px;
+    grid-row: 2/3;
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    &-img {
+      width: 300px;
+      height: 407px;
+      object-fit: cover;
+    }
+    &-title {
+      color: $colorDisplay;
+      font-size: 24px;
+    }
+    &-price {
+      font-weight: 600;
+      font-size: 36px;
+      color: #000;
+    }
+  }
+  &__btn {
+    @include viewbtn;
+    grid-row: 3/4;
+    justify-self: start;
+    position: absolute;
+    right: 20%;
+    transform: translateY(700%);
+  }
+}

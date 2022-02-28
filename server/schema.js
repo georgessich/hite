@@ -1,4 +1,4 @@
-const {gql} = require('apollo-server');
+const { gql } = require("apollo-server");
 const typeDefs = gql`
   type ItemCard {
     id: ID!
@@ -10,6 +10,7 @@ const typeDefs = gql`
     rating: Float
     category: Category
     slug: String!
+    pageImages: [String]
   }
   type Category {
     id: ID!

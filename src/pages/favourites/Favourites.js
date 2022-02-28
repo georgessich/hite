@@ -1,11 +1,14 @@
 import classes from "./Favourites.module.scss";
 import { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { favsActions } from "../../store/favs-slice";
 import EmptyFavourites from "./EmptyFavourites";
+import RecentPages from "../../components/recentPages/RecentPages";
 const Favourites = () => {
   const favs = JSON.parse(localStorage.getItem("favs"));
+  const viewedPages = useSelector((state) => state.recent.items)
+  console.log(viewedPages)
   const [items, setItems] = useState(favs);
   const dispatch = useDispatch();
   const removeFromFavourites = (id) => {
@@ -39,6 +42,7 @@ const Favourites = () => {
           ))}
         </ul>
       )}
+      <RecentPages />
     </section>
   );
 };

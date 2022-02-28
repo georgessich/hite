@@ -1,0 +1,67 @@
+@import '../../../components/variables.module.scss';
+.itemcard {
+    display: grid;
+    padding-left: 20%;
+    align-items: center;
+    grid-template-columns: repeat(12, min-content);
+
+    &__left {
+        grid-column: 1/3;
+    }
+
+    &__right {
+        padding-left: 50px;
+        grid-column: 3 / 10;
+        display: grid;
+        grid-row: 1/2;
+        align-self: start;
+        z-index:1000;
+        &-btn {
+            grid-row: 5/6;
+            grid-column: 3/5;
+            cursor: pointer;
+            background-color: transparent;
+
+            
+        }
+
+        &-title {
+            font-size: 36px;
+            font-family: $fontHeader;
+            grid-row: 1/2;
+            grid-column: 1/3;
+            white-space: nowrap;
+        }
+
+        &-price {
+            grid-row: 1/2;
+            grid-column: 3/4;
+            font-size: 36px;
+            font-family: $fontHeader;
+            padding-left: 20px;
+        }
+
+        &-rating {
+            grid-row: 3/4;
+            grid-column: 1/3;
+        }
+
+        &-add {
+            grid-row: 5/6;
+            grid-column: 1/2;
+            cursor: pointer;
+            background-color: transparent;
+            color: #000;
+            outline: none;
+            padding: 9px 44px;
+            font-weight: 600;
+            border:1px #000 solid;
+        }
+        &-description {
+            grid-column: 1/10;
+            grid-row: 7/13;
+        }
+    }
+
+   
+}

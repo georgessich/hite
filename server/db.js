@@ -2,7 +2,7 @@ const itemCards = [
   {
     id: 1,
     title: "Chet Armchair",
-    image: "https://i.imgur.com/kyWrBW2.png",
+    image: "https://i.imgur.com/SVY65MU.jpg",
     price: 506,
     materials: ["Wool"],
     description: [
@@ -13,11 +13,15 @@ const itemCards = [
     rating: 5,
     category: "1",
     slug: "1",
+    pageImages: [
+      "https://i.imgur.com/SVY65MU.jpg",
+      "https://i.imgur.com/3ApkVBm.jpg",
+    ],
   },
   {
     id: 2,
     title: "Russ Chair",
-    image: "https://i.imgur.com/DNv3YiH.png",
+    image: "https://i.imgur.com/CZGfXox.jpg",
     price: 129,
     materials: ["Wood"],
     description: [
@@ -28,11 +32,15 @@ const itemCards = [
     rating: 4.5,
     category: "1",
     slug: "2",
+    pageImages: [
+      "https://i.imgur.com/CZGfXox.jpg",
+      "https://i.imgur.com/Q74o74y.jpg",
+    ],
   },
   {
     id: 3,
     title: "Johnnie Chair",
-    image: "https://i.imgur.com/wIvxjBj.png",
+    image: "https://i.imgur.com/1E576Hj.jpg",
     price: 152,
     materials: ["Wood", "Plastic"],
     description: [
@@ -43,11 +51,15 @@ const itemCards = [
     rating: 4.7,
     category: "1",
     slug: "3",
+    pageImages: [
+      "https://i.imgur.com/1E576Hj.jpg",
+      "https://i.imgur.com/b7mcTui.jpg",
+    ],
   },
   {
     id: 4,
     title: "June Chair",
-    image: "https://i.imgur.com/mY3CUgv.png",
+    image: "https://i.imgur.com/qRFijEq.jpg",
     price: 315,
     materials: ["Plastic", "Plywood"],
     description: [
@@ -58,11 +70,15 @@ const itemCards = [
     rating: 4.8,
     category: "1",
     slug: "4",
+    pageImages: [
+      "https://i.imgur.com/qRFijEq.jpg",
+      "https://i.imgur.com/MUyFtV7.jpg",
+    ],
   },
   {
     id: 5,
-    title: "Alexandre Chair",
-    image: "https://i.imgur.com/kq83XkV.png",
+    title: "Alexandre Sofa",
+    image: "https://i.imgur.com/mVE7z7e.jpg",
     price: 948,
     materials: ["Plastic", "Plywood"],
     description: [
@@ -71,13 +87,17 @@ const itemCards = [
       "Aliquam felis ante, facilisis a rhoncus quis, vulputate sed nunc. In ac lacus et nibh pulvinar vestibulum et sit amet urna. Praesent libero lorem, fringilla cursus lacus eu, volutpat tempor mi. Maecenas sagittis mauris sem, in egestas lectus placerat at. Aliquam hendrerit neque nec venenatis consectetur. Suspendisse commodo dolor nibh, a ultricies lorem malesuada non. Cras vel magna elementum, dapibus ante ac, dignissim massa. Etiam ultrices sagittis efficitur. Cras varius placerat nunc id dictum. Curabitur eget massa felis.",
     ],
     rating: 4.4,
-    category: "1",
+    category: "2",
     slug: "5",
+    pageImages: [
+      "https://i.imgur.com/mVE7z7e.jpg",
+      "https://i.imgur.com/Eociur1.jpg",
+    ],
   },
   {
     id: 6,
     title: "Zaria Sofa",
-    image: "https://i.imgur.com/yZwqd4f.png",
+    image: "https://i.imgur.com/20nbhjd.jpg",
     price: 489,
     materials: ["Wool", "Plywood"],
     description: [
@@ -88,11 +108,15 @@ const itemCards = [
     rating: 4.6,
     category: "2",
     slug: "6",
+    pageImages: [
+      "https://i.imgur.com/20nbhjd.jpg",
+      "https://i.imgur.com/wdFpk7E.jpg",
+    ],
   },
   {
     id: 7,
     title: "Emmett Lamp",
-    image: "https://i.imgur.com/xxagiBZ.png",
+    image: "https://i.imgur.com/sjM7Kt2.jpg",
     price: 194,
     materials: ["Metal"],
     description: [
@@ -103,12 +127,16 @@ const itemCards = [
     rating: 4.9,
     category: "3",
     slug: "7",
+    pageImages: [
+      "https://i.imgur.com/sjM7Kt2.jpg",
+      "https://i.imgur.com/hANMAng.jpg",
+    ],
   },
   {
     id: 8,
-    title: "Aurore Chair",
-    image: "https://i.imgur.com/xkb0Y9d.png",
-    price: 275,
+    title: "Aurore Sofa",
+    image: "https://i.imgur.com/2EqL1jP.jpg",
+    price: 675,
     materials: ["Plastic", "Wood"],
     description: [
       "Vestibulum tincidunt commodo tortor, non molestie metus tempor nec. Ut a odio sagittis, tempor arcu dapibus, lobortis magna. Maecenas fermentum metus felis, at condimentum lorem porttitor euismod. Nulla volutpat tristique quam sed iaculis. Etiam consequat urna id sagittis gravida. Fusce a accumsan metus. Praesent semper, libero pretium sollicitudin rhoncus, odio turpis maximus ligula, id rhoncus ex nulla eu massa. Integer justo eros, elementum vitae quam vel, dictum vulputate augue. Donec tempus id purus vitae blandit. Pellentesque eleifend, libero non dignissim scelerisque, diam elit aliquet quam, ac interdum ante augue et sapien.",
@@ -116,13 +144,17 @@ const itemCards = [
       "Aliquam felis ante, facilisis a rhoncus quis, vulputate sed nunc. In ac lacus et nibh pulvinar vestibulum et sit amet urna. Praesent libero lorem, fringilla cursus lacus eu, volutpat tempor mi. Maecenas sagittis mauris sem, in egestas lectus placerat at. Aliquam hendrerit neque nec venenatis consectetur. Suspendisse commodo dolor nibh, a ultricies lorem malesuada non. Cras vel magna elementum, dapibus ante ac, dignissim massa. Etiam ultrices sagittis efficitur. Cras varius placerat nunc id dictum. Curabitur eget massa felis.",
     ],
     rating: 4.7,
-    category: "1",
+    category: "2",
     slug: "8",
+    pageImages: [
+      "https://i.imgur.com/2EqL1jP.jpg",
+      "https://i.imgur.com/SgVWzfC.jpg",
+    ],
   },
   {
     id: 9,
     title: "Ashlynn Sofa",
-    image: "https://i.imgur.com/6eN5cO7.png",
+    image: "https://i.imgur.com/r1d94rm.jpg",
     price: 899,
     materials: ["Wool", "Wood"],
     description: [
@@ -133,11 +165,15 @@ const itemCards = [
     rating: 5.0,
     category: "2",
     slug: "9",
+    pageImages: [
+      "https://i.imgur.com/r1d94rm.jpg",
+      "https://i.imgur.com/u5UGcrM.jpg",
+    ],
   },
   {
     id: 10,
     title: "Madonna Lamp",
-    image: "https://i.imgur.com/IBCztYa.png",
+    image: "https://i.imgur.com/YpRNezj.jpg",
     price: 537,
     materials: ["Metal"],
     description: [
@@ -148,6 +184,10 @@ const itemCards = [
     rating: 4.8,
     category: "3",
     slug: "10",
+    pageImages: [
+      "https://i.imgur.com/YpRNezj.jpg",
+      "https://i.imgur.com/3Zj1BBP.jpg",
+    ],
   },
 ];
 
@@ -173,5 +213,3 @@ module.exports = {
   itemCards,
   categories,
 };
-
-

@@ -3,6 +3,8 @@ import { cartActions } from "../../store/cart-slice";
 import classes from "./Cart.module.scss";
 import TotalPrice from "./TotalPrice";
 import EmptyCart from "./emptycart/EmptyCart";
+import {NavLink} from 'react-router-dom';
+import RecentPages from "../../components/recentPages/RecentPages";
 const Cart = (props) => {
   const cartItems = useSelector((state) => state.cart.items);
   const dispatch = useDispatch();
@@ -90,11 +92,12 @@ const Cart = (props) => {
           </div>
 
           <div className={classes['cart__items-btngroup']}>
-            <button>continue shopping</button>
-            <button>place order</button>
+            <NavLink className={classes['cart__items-btngroup-shop']} to="/shop">continue shopping</NavLink>
+            <NavLink className={classes['cart__items-btngroup-checkout']} to="/checkout">place order</NavLink>
           </div>
         </div>
       }
+      <RecentPages />
     </div>
   );
 };

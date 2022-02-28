@@ -1,25 +1,12 @@
 @import '../../../components/variables.module.scss';
+@import '../../../components/mixins.module.scss';
 .popitems {
     margin: 0 auto;
     display: grid;
     justify-content: center;
     align-items: center;
     &-title {
-        align-self: flex-start;
-        font-family: $fontHeader;
-        font-size: 48px;
-        color: $colorButton;
-        margin-top: 20px;
-        margin-bottom: 48px;
-        grid-column: 1/4;
-        &:before {
-            position: absolute;
-            content: "";
-            height: 6px;
-            background-color: $colorYellow;
-            width: 72px;
-            
-        }
+        @include recentTitle
     }
 
     &-items {
@@ -32,6 +19,10 @@
 
         &__img {
             height: 407px;
+            img {
+                width: 300px;
+                height: 407px;
+            }
         }
         &__title {
             color: $colorDisplay;
@@ -40,6 +31,7 @@
         &__price {
             font-weight: 600;
             font-size: 36px;
+            color: #000;
         }
     }
     &__banner {
@@ -70,10 +62,6 @@
     }
 
     &-btn {
-       grid-column: 3/4;
-       padding-bottom: 16px;
-       border-bottom: 6px solid #FFE7A7;
-       color: $colorDisplay;
-       margin-bottom: 64px;
+      @include viewbtn
     }
 }
