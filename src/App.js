@@ -8,6 +8,8 @@ import Cart from "./pages/cart/Cart";
 import ItemCard from "./pages/shop/itemcard/ItemCard";
 import Checkout from "./pages/checkout/Checkout";
 import Favourites from "./pages/favourites/Favourites";
+import About from "./pages/about/About";
+import PrivacyPolicy from "./pages/privacyPolicy/PrivacyPolicy";
 function App() {
   return (
     <section className="main-section">
@@ -19,6 +21,8 @@ function App() {
         <Route path="/cart" element={<Cart />}/>
         <Route path="/checkout" element={<Checkout />} />
         <Route path="/favourites" element={<Favourites/>} />
+        <Route path="/about" element={<About />}/>
+        <Route path="/privacy" element={<PrivacyPolicy />} />
         <Route
           path="*"
           element={

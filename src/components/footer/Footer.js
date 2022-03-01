@@ -4,6 +4,7 @@ import instagram from "../../images/instagram.png";
 import twitter from "../../images/twitter.png";
 import youtube from "../../images/union.png";
 import classes from "./Footer.module.scss";
+import { NavLink } from "react-router-dom";
 const Footer = () => {
   return (
     <footer className={classes["footer"]}>
@@ -54,19 +55,19 @@ const Footer = () => {
         <nav className={classes["footer__left-menu"]}>
           <ul className={classes["footer__left-items"]}>
             <li className={classes["footer__left-item"]}>
-              <a href="#" className={classes["footer__left-link"]}>
+              <NavLink to="/shop" className={classes["footer__left-link"]}>
                 shop
-              </a>
+              </NavLink>
             </li>
             <li className={classes["footer__left-item"]}>
-              <a href="#" className={classes["footer__left-link"]}>
+              <NavLink to="/about" className={classes["footer__left-link"]}>
                 about
-              </a>
+              </NavLink>
             </li>
             <li className={classes["footer__left-item"]}>
-              <a href="#" className={classes["footer__left-link"]}>
+              <NavLink to="/main" className={classes["footer__left-link"]}>
                 main
-              </a>
+              </NavLink>
             </li>
           </ul>
         </nav>
@@ -85,9 +86,9 @@ const Footer = () => {
               </a>
             </li>
             <li className={classes["footer__right-item"]}>
-              <a href="#" className={classes["footer__right-link"]}>
+              <NavLink to="/privacy" className={classes["footer__right-link"]}>
                 privacy policy
-              </a>
+              </NavLink>
             </li>
           </ul>
         </nav>

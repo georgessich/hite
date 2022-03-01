@@ -24,7 +24,7 @@ const Header = () => {
               </NavLink>
             </li>
             <li className={classes["header_left__menu-item"]}>
-              <NavLink to="/checkout" className={classes["header_left__menu-link"]}>
+              <NavLink to="/about" className={classes["header_left__menu-link"]}>
                 about
               </NavLink>
             </li>
