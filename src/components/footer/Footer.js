@@ -76,9 +76,9 @@ const Footer = () => {
         <nav className={classes["footer__right-menu"]}>
           <ul className={classes["footer__right-items"]}>
             <li className={classes["footer__right-item"]}>
-              <a href="#" className={classes["footer__right-link"]}>
+              <NavLink to="/payment" className={classes["footer__right-link"]}>
                 payment
-              </a>
+              </NavLink>
             </li>
             <li className={classes["footer__right-item"]}>
               <a href="#" className={classes["footer__right-link"]}>

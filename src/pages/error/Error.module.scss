@@ -1,0 +1,30 @@
+@import '../../components/variables.module.scss';
+@import '../../components/mixins.module.scss';
+.error{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 15% 0;
+    &__heading {
+        text-align: center;
+        color: $colorButton;
+        font-size: 128px;
+        padding: 0;
+        text-shadow: 0 0 1rem $colorButton;
+        margin: 0;
+    }
+
+    &__subheading {
+        text-align: center;
+        color: $colorButton;
+        font-size: 32px;
+        padding: 0;
+        text-shadow: 0 0 1rem $colorButton;
+    }
+
+    &__link {
+        @include links
+    }
+
+}

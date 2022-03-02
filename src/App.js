@@ -10,6 +10,8 @@ import Checkout from "./pages/checkout/Checkout";
 import Favourites from "./pages/favourites/Favourites";
 import About from "./pages/about/About";
 import PrivacyPolicy from "./pages/privacyPolicy/PrivacyPolicy";
+import Payment from './pages/payment/Payment';
+import Error from "./pages/error/Error";
 function App() {
   return (
     <section className="main-section">
@@ -23,12 +25,11 @@ function App() {
         <Route path="/favourites" element={<Favourites/>} />
         <Route path="/about" element={<About />}/>
         <Route path="/privacy" element={<PrivacyPolicy />} />
+        <Route path="/payment" element={<Payment />}/>
         <Route
           path="*"
           element={
-            <main style={{ padding: "1rem" }}>
-              <p>There's nothing here!</p>
-            </main>
+            <Error />
           }
         />
       </Routes>
