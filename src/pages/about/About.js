@@ -30,12 +30,8 @@ const About = () => {
     <div>
       <div className={classes["about__hero"]}>
         <h2 className={classes["about__hero-title"]}>
-          about <span>hite</span>
+          About hite
         </h2>
-        <h3 className={classes["about__hero-subtitle"]}>
-          We believe that great design should be available to everyone. Want to
-          know more?
-        </h3>
       </div>
       <div style={{display: "flex", flexDirection: "column", justifyContent: "center", alignItems:"center", margin:"50px", gap:"50px"}}>
         {postsFirst.map((item) => (

@@ -1,21 +1,19 @@
-import classes from './Accordeon.module.scss';
-import { useState, useRef } from 'react';
-const Accordeon = () => {
-    const [active, setActive] = useState('');
-    const [height, setHeight] = useState('0px');
-    const content = useRef(null);
+import classes from "./Accordeon.module.scss";
+import { useState } from "react";
+const Accordeon = ({ title, text }) => {
+  const [isActive, setIsActive] = useState(false);
 
-    const toggleAccordeon = () => {
-        setActive(active === '' ? 'active' : '');
-        setHeight(active === 'active' ? "0px" : `${content.current.scrollHeight}px`)
-    }
-    return (
-        <div>
-            <button>
-                <p>{props}</p>
-            </button>
-        </div>
-    )
-}
+  return (
+    <div className={classes["accordeon"]}>
+      <div className={!isActive ? classes["accordeon__btn"] : classes["accordeon__btn--active"]} onClick={() => setIsActive(!isActive)}>
+        <div className={classes["accordeon__btn-title"]}>{title}</div>
+      </div>
+      {/* {!isActive && <div className={classes['accordeon__content']}>{text}</div>} */}
+      <div className={!isActive ? classes["accordeon__content"] : classes["accordeon__content--active"]}>
+        <div>{text}</div>
+      </div>
+    </div>
+  );
+};
 
 export default Accordeon;

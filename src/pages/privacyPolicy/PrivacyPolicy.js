@@ -208,7 +208,7 @@ const PrivacyPolicy = () => {
         close Your web browser. Learn more about cookies:{" "}
         <a
           href="https://www.freeprivacypolicy.com/blog/sample-privacy-policy-template/#Use_Of_Cookies_And_Tracking"
-          target="_blank"
+         
         >
           Use of Cookies by Free Privacy Policy
         </a>

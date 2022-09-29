@@ -81,9 +81,9 @@ const Footer = () => {
               </NavLink>
             </li>
             <li className={classes["footer__right-item"]}>
-              <a href="#" className={classes["footer__right-link"]}>
+              <NavLink to="/delivery" className={classes["footer__right-link"]}>
                 delivery and returns
-              </a>
+              </NavLink>
             </li>
             <li className={classes["footer__right-item"]}>
               <NavLink to="/privacy" className={classes["footer__right-link"]}>

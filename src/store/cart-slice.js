@@ -23,7 +23,7 @@ const cartSlice = createSlice({
                 });
             } else {
                 existingItem.quantity++;
-                existingItem.totalPrice = existingItem.totalPrice + newItem.price;
+                existingItem.totalPrice = parseInt(existingItem.totalPrice) + parseInt(newItem.price);
             }
         },
         removeItemFromCart(state, action){

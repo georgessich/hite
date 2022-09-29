@@ -37,23 +37,6 @@
       overflow: visible;
       width: 10rem;
     }
-
-    
-    // .heart-background {
-    //   position: absolute;
-    //   left: 0;
-    //   right: 0;
-    //   z-index: -1;
-    //   stroke: none;
-    // }
-
-    &:hover path {
-      
-    }
-
-    // .heart-background path {
-    //   animation: fade-animation 2s ease-in-out forwards;
-    // }
   }
 }
 .like {
@@ -67,21 +50,3 @@
 }
 
 
-// @keyframes fade-animation {
-//   70% {
-//     fill: transparent;
-//     transform: scale(1);
-//   }
-//   80% {
-//     fill: #ff7eb4;
-//     transform: scale(1.1);
-//     opacity: 1;
-//   }
-//   90% {
-//     opacity: 1;
-//   }
-//   100% {
-//     transform: scale(2.5);
-//     opacity: 0;
-//   }
-// }

@@ -40,14 +40,11 @@ const Header = () => {
               <NavLink to="/favourites" className={classes["header_right__menu-link"]}><img src={heart} alt="heart" /></NavLink>
             </li>
             <li className={classes["header_right__menu-item"]}>
-              <NavLink to="/cart" className={classes["header_right__menu-link"]}><img src={basket} alt="basket" /></NavLink>
+              <NavLink to="/cart" className={classes["header_right__menu-link"]}><img src={basket} alt="basket" />{cartQuantity > 0 && <span className={classes["header_right__menu-link-basket"]}>{cartQuantity}</span>}</NavLink>
             </li>
           </ul>
         </nav>
       </div>
-      <NavLink to="/cart">
-        <span>{cartQuantity}</span>
-      </NavLink>
     </header>
   );
 };

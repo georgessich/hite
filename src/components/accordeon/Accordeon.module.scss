@@ -1,0 +1,54 @@
+@import "../../components/variables.module.scss";
+.accordeon {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+
+  &__btn {
+    background-color: #fff;
+    color: $colorDisplay;
+    cursor: pointer;
+    padding: 18px;
+    display: flex;
+    align-items: center;
+    border: none;
+    outline: none;
+    transition: background-color 0.6s ease;
+    width: 60%;
+    &:hover {
+      background-color: $colorButton;
+    }
+    &--active {
+      background-color: $colorButton;
+      color: $colorDisplay;
+      cursor: pointer;
+      padding: 18px;
+      display: flex;
+      align-items: center;
+      border: none;
+      outline: none;
+      transition: background-color 0.6s ease;
+      width: 60%;
+    }
+  }
+
+  &__content {
+    opacity: 0;
+    transform: translateY(0);
+    overflow: hidden;
+    z-index: -2;
+    height: 0;
+    &--active {
+      width: 60%;
+      padding: 18px;
+      border: 1px solid $colorButton;
+      transform: translateY(0);
+      opacity: 1;
+      transition: transform 0.4s ease-in-out;
+      
+      
+    }
+  }
+}

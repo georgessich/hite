@@ -1,8 +1,11 @@
 import classes from "./Checkout.module.scss";
 import { useSelector } from "react-redux";
+import deliveryPic from '../../images/fxemoji_package.png';
 const Checkout = () => {
   const cartItems = useSelector((state) => state.cart.items);
-  console.log(cartItems);
+  const totalPrice = (cartItems.map((item) => item.quantity * item.price)).reduce((a, b) => {return a + b}, 0);
+  console.log(totalPrice)
+  const shipping = 60;
   return (
     <section className={classes["checkout"]}>
       <h2 className={classes["checkout__title"]}>Confirm the Order</h2>
@@ -38,11 +41,33 @@ const Checkout = () => {
                   {item.quantity}
                 </span>
                 <span className={classes["checkout__item-subtotal"]}>
-                  {item.price * item.quantity}
+                  ${item.price * item.quantity}
                 </span>
               </li>
             ))}
+            <li className={classes["checkout__item"]}>
+                <img
+                  className={classes["checkout__item-img"]}
+                 src={deliveryPic} alt={"delivery"}
+                />
+                <span className={classes["checkout__item-name"]}>
+                  shipping
+                </span>
+                <span className={classes["checkout__item-color"]}>
+                  -
+                </span>
+                <span className={classes["checkout__item-qty"]}>
+                  -
+                </span>
+                <span className={classes["checkout__item-subtotal"]}>
+                  ${shipping}
+                </span>
+              </li>
           </ul>
+          
+            <span  className={classes["checkout__item-totaltitle"]}>Total</span>
+            <span  className={classes["checkout__item-totalprice"]}>${totalPrice + shipping}</span>
+        
           </div>
          
         </div>

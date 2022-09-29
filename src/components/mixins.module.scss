@@ -30,7 +30,6 @@
   }
 }
 
-
 @mixin recentTitle {
   align-self: flex-start;
   font-family: $fontHeader;
@@ -40,19 +39,35 @@
   margin-bottom: 48px;
   grid-column: 1/4;
   &:before {
-      position: absolute;
-      content: "";
-      height: 6px;
-      background-color: $colorYellow;
-      width: 72px;
-      
+    position: absolute;
+    content: "";
+    height: 6px;
+    background-color: $colorYellow;
+    width: 72px;
   }
 }
 
 @mixin viewbtn {
   grid-column: 3/4;
   padding-bottom: 16px;
-  border-bottom: 6px solid #FFE7A7;
+  border-bottom: 6px solid #ffe7a7;
   color: $colorDisplay;
   margin-bottom: 64px;
+}
+
+@mixin heroImage($image) {
+  background-image: url($image);
+  background-size: cover;
+  background-position: bottom;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 15% 0;
+  &-title {
+    font-size: 64px;
+    color: #fff;
+    font-weight: 700;
+    text-align: center;
+  }
 }

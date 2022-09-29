@@ -2,18 +2,17 @@
 @import "../../components/mixins.module.scss";
 .checkout {
   &__title {
-    @include titles
+    @include titles;
   }
   &__container {
     display: grid;
     grid-template-columns: repeat(2, min-content);
     grid-column-gap: 32px;
     justify-content: center;
-
-    
   }
 
-  &__container-title, &__form-title {
+  &__container-title,
+  &__form-title {
     font-size: 32px;
     font-weight: 500;
     margin-bottom: 32px;
@@ -51,7 +50,7 @@
         content: "";
         display: block;
         height: 1px;
-        background-color: #82B5D1;
+        background-color: #82b5d1;
       }
     }
   }
@@ -65,7 +64,6 @@
       width: 48px;
       height: 48px;
       grid-column: 2/3;
-
     }
 
     &-name {
@@ -85,16 +83,47 @@
       grid-column: 8/9;
       justify-self: center;
     }
+
+    &-totaltitle {
+      grid-column: 7/8;
+      grid-row: 3/4;
+      justify-self: center;
+      font-weight: 700;
+    }
+
+    &-totalprice {
+      grid-column: 8/9;
+      grid-row: 3/4;
+      justify-self: center;
+    }
+
+    &-totaltitle,
+    &-totalprice {
+      position: relative;
+      padding-top: 5px;
+      &::before {
+        position: absolute;
+        content: "";
+        background-color: #82b5d1;
+        height: 2px;
+        width: 220%;
+        margin-top: -5px;
+      }
+    }
   }
   &__form {
     grid-column: 2/3;
     display: grid;
     grid-template-columns: repeat(8, 80px);
-    & input, select, &-subtitle {
+    & input,
+    select,
+    &-subtitle {
       margin-bottom: 24px;
     }
 
-    & input[type="text"], input[type="tel"],select {
+    & input[type="text"],
+    input[type="tel"],
+    select {
       height: 40px;
     }
     &-title {
@@ -116,7 +145,6 @@
     &-tel--input,
     &-tel--label,
     &-paytitle,
-
     &-valid--input,
     &-valid--label {
       grid-column: 1/4;
@@ -124,13 +152,15 @@
     &-street--input,
     &-street--label,
     &-town--input,
-    &-town--label{
-        grid-column: 1/5;
+    &-town--label {
+      grid-column: 1/5;
     }
     &-email--label,
     &-email--input,
-    &-state--label, &-cvv--label,
-    &-state--input, &-cvv--input {
+    &-state--label,
+    &-cvv--label,
+    &-state--input,
+    &-cvv--input {
       grid-column: 5/9;
     }
     &-cardholder--label,
@@ -184,7 +214,8 @@
     &-tel--input {
       grid-row: 12/13;
     }
-    &-check--input, &-check--label {
+    &-check--input,
+    &-check--label {
       grid-row: 13/14;
     }
     &-notes--label {
@@ -196,10 +227,12 @@
     &-paytitle {
       grid-row: 16/17;
     }
-    &-payment--input-1, &-payment--label-1 {
+    &-payment--input-1,
+    &-payment--label-1 {
       grid-row: 17/18;
     }
-    &-payment--input-2, &-payment--label-2 {
+    &-payment--input-2,
+    &-payment--label-2 {
       grid-row: 18/19;
     }
     &-cardholder--label {
@@ -214,10 +247,12 @@
     &-cardnumber--input {
       grid-row: 22/23;
     }
-    &-valid--label, &-cvv--label {
+    &-valid--label,
+    &-cvv--label {
       grid-row: 23/24;
     }
-    &-valid--input, &-cvv--input {
+    &-valid--input,
+    &-cvv--input {
       grid-row: 24/25;
     }
 
@@ -228,7 +263,7 @@
     &-paytitle,
     &-subtitle {
       font-size: 24px;
-      
+
       grid-column: 1/9;
       margin-bottom: 32px;
     }

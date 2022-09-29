@@ -10,30 +10,30 @@ import Checkout from "./pages/checkout/Checkout";
 import Favourites from "./pages/favourites/Favourites";
 import About from "./pages/about/About";
 import PrivacyPolicy from "./pages/privacyPolicy/PrivacyPolicy";
-import Payment from './pages/payment/Payment';
+import Payment from "./pages/payment/Payment";
+import Delivery from "./pages/delivery/Delivery";
 import Error from "./pages/error/Error";
+import ScrollToTop from "./components/scrollToTop/ScrollToTop";
 function App() {
   return (
     <section className="main-section">
-      <Header />
-      <Routes>
-        <Route path="/" element={<Main />} />
-        <Route path="/shop/" element={<Shop />} />
-        <Route path="/shop/:slug" element={<ItemCard />} />
-        <Route path="/cart" element={<Cart />}/>
-        <Route path="/checkout" element={<Checkout />} />
-        <Route path="/favourites" element={<Favourites/>} />
-        <Route path="/about" element={<About />}/>
-        <Route path="/privacy" element={<PrivacyPolicy />} />
-        <Route path="/payment" element={<Payment />}/>
-        <Route
-          path="*"
-          element={
-            <Error />
-          }
-        />
-      </Routes>
-      <Footer />
+      <ScrollToTop>
+        <Header />
+        <Routes>
+          <Route path="/" element={<Main />} />
+          <Route path="/shop/" element={<Shop />} />
+          <Route path="/shop/:slug" element={<ItemCard />} />
+          <Route path="/cart" element={<Cart />} />
+          <Route path="/checkout" element={<Checkout />} />
+          <Route path="/favourites" element={<Favourites />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/privacy" element={<PrivacyPolicy />} />
+          <Route path="/payment" element={<Payment />} />
+          <Route path="/delivery" element={<Delivery />} />
+          <Route path="*" element={<Error />} />
+        </Routes>
+        <Footer />
+      </ScrollToTop>
     </section>
   );
 }

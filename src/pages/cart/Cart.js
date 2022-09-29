@@ -1,7 +1,7 @@
 import { useSelector, useDispatch } from "react-redux";
 import { cartActions } from "../../store/cart-slice";
 import classes from "./Cart.module.scss";
-import TotalPrice from "./TotalPrice";
+
 import EmptyCart from "./emptycart/EmptyCart";
 import {NavLink} from 'react-router-dom';
 import RecentPages from "../../components/recentPages/RecentPages";

@@ -9,7 +9,8 @@
 
 .inner {
     white-space: nowrap;
-    transition: transform 0.3s;
+    transition: transform 0.3s opacity .6s;
+    
 }
 
 .carousel-item {

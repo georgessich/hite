@@ -1,5 +1,4 @@
 import classes from "./ItemGrid.module.scss";
-import { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import { recentActions } from "../../../store/recent-slice";
 import { useDispatch } from "react-redux";
