@@ -1,25 +1,24 @@
-const itemCards = [
   {
-    id: 1,
-    title: "Chet Armchair",
-    image: "https://i.imgur.com/SVY65MU.jpg",
-    price: 506,
-    materials: ["Wool"],
-    description: [
+    "id": 1,
+    "title": "Chet Armchair",
+    "image": "https://i.imgur.com/SVY65MU.jpg",
+    "price": 506,
+    "materials": ["Wool"],
+    "description": [
       "Vestibulum tincidunt commodo tortor, non molestie metus tempor nec. Ut a odio sagittis, tempor arcu dapibus, lobortis magna. Maecenas fermentum metus felis, at condimentum lorem porttitor euismod. Nulla volutpat tristique quam sed iaculis. Etiam consequat urna id sagittis gravida. Fusce a accumsan metus. Praesent semper, libero pretium sollicitudin rhoncus, odio turpis maximus ligula, id rhoncus ex nulla eu massa. Integer justo eros, elementum vitae quam vel, dictum vulputate augue. Donec tempus id purus vitae blandit. Pellentesque eleifend, libero non dignissim scelerisque, diam elit aliquet quam, ac interdum ante augue et sapien.",
       "Sed eu justo nibh. Ut molestie, risus sed pretium scelerisque, ipsum lacus lacinia metus, nec eleifend felis massa sodales nisl. Duis sit amet vestibulum lacus. Suspendisse ac magna sit amet magna vehicula cursus et id augue. Nullam sit amet metus at nunc suscipit tempus a ac libero. Maecenas nec vehicula mi. Suspendisse potenti.",
       "Aliquam felis ante, facilisis a rhoncus quis, vulputate sed nunc. In ac lacus et nibh pulvinar vestibulum et sit amet urna. Praesent libero lorem, fringilla cursus lacus eu, volutpat tempor mi. Maecenas sagittis mauris sem, in egestas lectus placerat at. Aliquam hendrerit neque nec venenatis consectetur. Suspendisse commodo dolor nibh, a ultricies lorem malesuada non. Cras vel magna elementum, dapibus ante ac, dignissim massa. Etiam ultrices sagittis efficitur. Cras varius placerat nunc id dictum. Curabitur eget massa felis.",
     ],
-    rating: 5,
-    category: "1",
-    slug: "1",
-    pageImages: [
+    "rating": 5,
+    "category": "1",
+    "slug": "1",
+    "pageImages": [
       "https://i.imgur.com/SVY65MU.jpg",
       "https://i.imgur.com/3ApkVBm.jpg",
-    ],
+    ]
   },
   {
-    id: 2,
+    "id": 2,
     title: "Russ Chair",
     image: "https://i.imgur.com/CZGfXox.jpg",
     price: 129,
@@ -51,10 +50,7 @@ const itemCards = [
     rating: 4.7,
     category: "1",
     slug: "3",
-    pageImages: [
-      "https://i.imgur.com/1E576Hj.jpg",
-      "https://i.imgur.com/b7mcTui.jpg",
-    ],
+    pageImages: ["https://i.imgur.com/1E576Hj.jpg", "https://i.imgur.com/b7mcTui.jpg"],
   },
   {
     id: 4,
@@ -186,7 +182,7 @@ const itemCards = [
     slug: "10",
     pageImages: [
       "https://i.imgur.com/YpRNezj.jpg",
-      "https://i.imgur.com/3Zj1BBP.jpg",
+      "https://i.imgur.com/3Zj1BBP.jpg"
     ],
   },
 ];

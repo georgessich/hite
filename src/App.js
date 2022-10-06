@@ -21,8 +21,9 @@ function App() {
         <Header />
         <Routes>
           <Route path="/" element={<Main />} />
-          <Route path="/shop/" element={<Shop />} />
-          <Route path="/shop/:slug" element={<ItemCard />} />
+          <Route exact path="/shop/" element={<Shop />} />
+          <Route path="/shop/:categoryName" element={<Shop />} />
+          <Route path="/shop/product/:slug" element={<ItemCard />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/checkout" element={<Checkout />} />
           <Route path="/favourites" element={<Favourites />} />

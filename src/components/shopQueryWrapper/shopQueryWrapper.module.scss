@@ -1,0 +1,16 @@
+.shop__wrapper {
+    
+        grid-column: 2/4;
+        display: grid;
+        justify-content: start;
+        grid-column-gap: 32px;
+        grid-template-columns: repeat(3, 300px );
+        grid-row-gap: 52px;
+        margin-bottom: 100px;
+        &-text {
+            text-align: center;
+            font-size: 32px;
+            font-weight: 500;
+            grid-column: 2 / 3;
+        }
+}

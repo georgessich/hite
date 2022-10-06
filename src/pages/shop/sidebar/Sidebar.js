@@ -15,9 +15,9 @@ const Sidebar = (props) => {
       <span className={classes["sidebar__title"]}>Filter</span>
       <form className={classes["sidebar__form"]}>
         <div className={classes["sidebar__filter"]}>
-          <span className={classes["sidebar__filter-title"]}>Category</span>
-          {categories.map((category, i) => (
-            <div className={classes["sidebar__filter-container"]}>
+          {!props.slugName ? <span className={classes["sidebar__filter-title"]}>Category</span>: null}
+          {!props.slugName ? categories.map((category, i) => (
+            <div key={i} className={classes["sidebar__filter-container"]}>
               <input
                 className={classes["sidebar__filter-input"]}
                 type="checkbox"
@@ -34,11 +34,11 @@ const Sidebar = (props) => {
                 <span>{category}</span>
               </label>
             </div>
-          ))}
+          )) : null}
         </div>
         <div className={classes["sidebar__filter"]}>
           <span className={classes["sidebar__filter-title"]}>Price range</span>
-          <div>
+          <div className={classes["sidebar__filter-container"]}>
             <input
               className={classes["sidebar__filter-number"]}
               type="number"
@@ -52,7 +52,7 @@ const Sidebar = (props) => {
             <input
               className={classes["sidebar__filter-number"]}
               type="number"
-              min="0"
+              min="100"
               max="1200"
               id="price"
               name="price"
@@ -63,7 +63,7 @@ const Sidebar = (props) => {
         <div className={classes["sideba__filter"]}>
           <span className={classes["sidebar__filter-title"]}>Materials</span>
           {materials.map((material, i) => (
-            <div className={classes["sidebar__filter-container"]}>
+            <div key={i}  className={classes["sidebar__filter-container"]}>
               <input
                 className={classes["sidebar__filter-input"]}
                 type="checkbox"

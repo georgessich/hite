@@ -1,108 +1,183 @@
 import ItemGrid from "./itemgrid/ItemGrid";
+
 import Sidebar from "./sidebar/Sidebar";
 import classes from "./Shop.module.scss";
-import { useState, useMemo, useEffect } from "react";
+import { useState, useEffect } from "react";
 import LoadingSpinner from "../../components/loadingSpinner/LoadingSpinner";
+import { useParams } from "react-router-dom";
+import { useCallback } from "react";
+import ShopQueryWrapper from "../../components/shopQueryWrapper/shopQueryWrapper";
 const Shop = () => {
   const [filteredByCategory, setFilteredByCategory] = useState([]);
-  const [isLoading, setIsLoading] = useState(true);
-  const [httpError, setHttpError] = useState();
+  const { categoryName } = useParams();
+  console.log(categoryName);
+  console.log(useParams());
+  const [slugName, setSlugName] = useState(categoryName);
   const [category, setCategory] = useState([]);
   const [materials, setMaterials] = useState([]);
   const [priceMin, setPriceMin] = useState();
   const [priceMax, setPriceMax] = useState();
-  useEffect (() => {
+  const [isLoading, setIsLoading] = useState(true);
+  const [httpError, setHttpError] = useState();
+  console.log(category);
+  useEffect(() => {
     const fetchItems = async () => {
-      const response = await fetch (`https://hite-ae54f-default-rtdb.europe-west1.firebasedatabase.app/items.json`)
-      if(!response.ok) {
-        throw new Error('Something went wrong!')
+      const response = await fetch(
+        `https://hite-ae54f-default-rtdb.europe-west1.firebasedatabase.app/items.json`
+      );
+      if (!response.ok) {
+        throw new Error("Failed to fetch");
       }
-      const responseData = await response.json();
-  
+      const data = await response.json();
       const loadedItems = [];
-  
-      for (const key in responseData) {
+      for (const key in data) {
         loadedItems.push({
-          id: responseData[key].id,
-          rating: responseData[key].rating,
-          price: responseData[key].price,
-          title: responseData[key].title,
-          image: responseData[key].image,
-          category: responseData[key].category
-        })
+          id: data[key].id,
+          rating: data[key].rating,
+          price: data[key].price,
+          title: data[key].title,
+          image: data[key].image,
+          category: data[key].category,
+          materials: data[key].materials,
+        });
       }
-    
-      setFilteredByCategory(loadedItems);
-      console.log(filteredByCategory)
+      if (slugName) {
+        let capitalized = slugName.charAt(0).toUpperCase() + slugName.slice(1);
+        setCategory(capitalized);
+      }
+      if (
+        category.length === 0 &&
+        !priceMin &&
+        !priceMax &&
+        materials.length === 0
+      ) {
+        setFilteredByCategory(loadedItems);
+      } else if (
+        category.length > 0 &&
+        !priceMin &&
+        !priceMax &&
+        materials.length === 0
+      ) {
+        let newProductsList = loadedItems;
+        newProductsList = newProductsList.filter((items) =>
+          category.includes(items.category)
+        );
+        setFilteredByCategory(newProductsList);
+      } else if (
+        category.length === 0 &&
+        priceMin &&
+        !priceMax &&
+        materials.length === 0
+      ) {
+        let newProductsList = loadedItems;
+        newProductsList = newProductsList.filter(
+          (item) => parseInt(item.price) > priceMin
+        );
+        setFilteredByCategory(newProductsList);
+      } else if (
+        category.length > 0 &&
+        priceMin &&
+        !priceMax &&
+        materials.length === 0
+      ) {
+        let newProductsList = loadedItems;
+        newProductsList = newProductsList.filter(
+          (item) =>
+            parseInt(item.price) > priceMin && category.includes(item.category)
+        );
+        setFilteredByCategory(newProductsList);
+        setSlugName("");
+      } else if (
+        (priceMin || priceMax) &&
+        category.length > 0 &&
+        materials.length === 0
+      ) {
+        let newProductsList = loadedItems;
+        newProductsList = newProductsList.filter(
+          (item) =>
+            parseInt(item.price) > priceMin &&
+            parseInt(item.price) < priceMax &&
+            category.includes(item.category)
+        );
+        setFilteredByCategory(newProductsList);
+      } else if (
+        (priceMin || priceMax) &&
+        category.length === 0 &&
+        materials.length === 0
+      ) {
+        let newProductsList = loadedItems;
+        newProductsList = newProductsList.filter(
+          (item) =>
+            parseInt(item.price) > priceMin && parseInt(item.price) < priceMax
+        );
+        setFilteredByCategory(newProductsList);
+      } else if (materials && category.length === 0 && !priceMin && !priceMax) {
+        let newProductsList = loadedItems;
+        newProductsList = newProductsList.filter((item) =>
+          materials.includes(item.materials[0] || item.materials[1])
+        );
+        setFilteredByCategory(newProductsList);
+      } else if (materials && category.length > 0 && !priceMin && !priceMax) {
+        let newProductsList = loadedItems;
+        newProductsList = newProductsList.filter(
+          (item) =>
+            materials.includes(item.materials[0] || item.materials[1]) &&
+            category.includes(item.category)
+        );
+        setFilteredByCategory(newProductsList);
+      } else if (materials && category.length > 0 && priceMin && !priceMax) {
+        let newProductsList = loadedItems;
+        newProductsList = newProductsList.filter(
+          (item) =>
+            materials.includes(item.materials[0] || item.materials[1]) &&
+            category.includes(item.category) &&
+            parseInt(item.price) > priceMin
+        );
+        setFilteredByCategory(newProductsList);
+      } else if (materials && category.length > 0 && priceMin && priceMax) {
+        let newProductsList = loadedItems;
+        newProductsList = newProductsList.filter(
+          (item) =>
+            materials.includes(item.materials[0] || item.materials[1]) &&
+            category.includes(item.category) &&
+            parseInt(item.price) > priceMin &&
+            parseInt(item.price) < priceMax
+        );
+        setFilteredByCategory(newProductsList);
+      } else if (materials && category.length > 0 && !priceMin && priceMax) {
+        let newProductsList = loadedItems;
+        newProductsList = newProductsList.filter(
+          (item) =>
+            materials.includes(item.materials[0] || item.materials[1]) &&
+            category.includes(item.category) &&
+            parseInt(item.price) < priceMax
+        );
+        setFilteredByCategory(newProductsList);
+      } else if (materials && !category.length > 0 && !priceMin && priceMax) {
+        let newProductsList = loadedItems;
+        newProductsList = newProductsList.filter(
+          (item) =>
+            materials.includes(item.materials[0] || item.materials[1]) &&
+            parseInt(item.price) < priceMax
+        );
+        setFilteredByCategory(newProductsList);
+      }
       setIsLoading(false);
-    }
+    };
     fetchItems().catch((error) => {
       setIsLoading(false);
-      setHttpError(error.message)
-    })
-  }, [category, materials, priceMax, priceMin])
- 
-  const filteredCards = useMemo(
-    () =>
-      filteredByCategory.filter(
-        (item) =>
-          // category || materials ?
-          //     category.some((category) =>
-          //     [item.category.category].flat().includes(category)
-          //   ) ||
-          //   materials.some((material) =>
-          //     [item.materials].flat().includes(material)
-          //   ) :
-          // category || materials ?
-          //   category.some((category) =>
-          //     [item.category.category].flat().includes(category)
-          //   ) ||
-          //   materials.some((material) =>
-          //     [item.materials].flat().includes(material)
-          //   ) ||
-          //   (priceMin < parseInt(item.price.slice(1)) &&
-          //     priceMax > parseInt(item.price.slice(1)))
-          //     : null
-          (category &&
-            category.some((category) =>
-              [item.category].flat().includes(category)
-            )) ||
-          (materials &&
-            materials.some((material) =>
-              [item.materials].flat().includes(material)
-            )) ||
-          (category &&
-            materials &&
-            category.some((category) =>
-              [item.category].flat().includes(category)
-            ) &&
-            materials.some((material) =>
-              [item.materials].flat().includes(material)
-            ))
+      setHttpError(error.message);
+    });
+  }, [category, priceMin, priceMax, materials, slugName]);
+  //   if (isLoading) return <LoadingSpinner />;
+  // if (isError) return `Error ${isError.message}`;
 
-        // (category.some((category) =>
-        //   [item.category.category].flat().includes(category)
-        // ) &&
-        //   materials.some((material) =>
-        //     [item.materials].flat().includes(material)
-        //   ))
-      ),
-    [category, materials, filteredByCategory, priceMin, priceMax]
-  );
-
-  if (isLoading) return <LoadingSpinner />;
-  if (httpError) return `Error ${httpError.message}`;
-
-  console.log(filteredByCategory);
-  console.log(priceMin);
-  console.log(priceMax);
-  console.log(filteredCards);
-  console.log(category)
   return (
     <div className={classes["shop"]}>
       <Sidebar
         data={filteredByCategory}
         category={category}
+        slugName={slugName}
         setCategory={setCategory}
         materials={materials}
         setMaterials={setMaterials}
@@ -111,25 +186,23 @@ const Shop = () => {
         priceMax={priceMax}
         setPriceMax={setPriceMax}
       />
-      <ul className={classes["shop__grid"]}>
-        {filteredCards?.length > 0
-          ? filteredCards?.map((itemCard) => (
-              <ItemGrid
-                id={itemCard.id}
-                title={itemCard.title}
-                price={itemCard.price}
-                image={itemCard.image}
-              />
-            ))
-          : filteredByCategory.map((itemCard) => (
-              <ItemGrid
-                id={itemCard.id}
-                title={itemCard.title}
-                price={itemCard.price}
-                image={itemCard.image}
-              />
-            ))}
-      </ul>
+      <ShopQueryWrapper
+        data={filteredByCategory}
+        error={httpError}
+        loading={isLoading}
+      >
+        <ul className={classes["shop__grid"]}>
+          {filteredByCategory?.map((itemCard) => (
+            <ItemGrid
+              key={itemCard.id}
+              id={itemCard.id}
+              title={itemCard.title}
+              price={itemCard.price}
+              image={itemCard.image}
+            />
+          ))}
+        </ul>
+      </ShopQueryWrapper>
     </div>
   );
 };

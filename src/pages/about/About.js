@@ -2,30 +2,31 @@ import classes from "./About.module.scss";
 
 const postsFirst = [
   {
-    title: "In sed neque iaculis, tempus.",
-    text: "Vivamus metus neque, egestas at bibendum et, eleifend laoreet est. Aliquam at elit vulputate, mattis mauris at, tempus velit.",
+    title: "Good for people",
+    text: "We support excellent design everywhere, from locally to globally. This entails assisting the people who created your goods through moral production, worker welfare, and economic effect.",
     img: "https://i.imgur.com/TaAWhwy.jpg",
   },
   {
-    title: "Etiam ex neque, euismod non.",
-    text: "Nullam et nulla eu lacus pharetra faucibus vitae eleifend neque. Phasellus ullamcorper elit eget ligula tempor consequat.",
+    title: "Local",
+    text: "We support the maker movement locally to support budding local economies and artists and designers, particularly in disadvantaged areas.",
     img: "https://i.imgur.com/CtIhPtl.jpg",
   },
 ];
 const postsSecond = [
   {
-    title: "Sed tristique vestibulum nulla eget.",
-    text: "Praesent neque metus, fermentum ut tortor id, fringilla viverra velit. Phasellus eget neque in justo pharetra ornare vel ultrices sem.",
+    title: "Handcrafted",
+    text: "We work with artisan groups all over the world to support the preservation of their handicraft traditions and the development of viable employment prospects, particularly in rural areas.",
     img: "https://i.imgur.com/jitb14M.jpg",
   },
   {
-    title: "Vestibulum at molestie ligula, sit.",
-    text: "Maecenas hendrerit orci eros, sit amet ultricies turpis pretium a. Nunc feugiat posuere lacus, in suscipit odio vestibulum in.",
+    title: "Good Trade",
+    text: "We joined Fair Trade USA as the first home retailer ever, ensuring that workers receive fair wages, wholesome working conditions, and community development.",
     img: "https://i.imgur.com/ULLKzJ2.jpg",
   },
 ];
 
 const About = () => {
+
   return (
     <div>
       <div className={classes["about__hero"]}>
@@ -46,8 +47,7 @@ const About = () => {
           </div>
         ))}
         <span className={classes["about__quote"]}>
-          "Sed eu eros ornare justo sodales tempus non sit amet sapien. Nulla in
-          molestie ligula, eget rutrum purus. Suspendisse potenti."
+          "At hite, we employ design to make things better for the planet, our local areas, and you. Today, 60% of our product sales support at least one of our sustainability projects, and we’re doing more every day."
         </span>
         {postsSecond.map((item) => (
           <div className={classes["about__post"]}>

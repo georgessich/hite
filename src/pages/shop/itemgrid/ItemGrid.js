@@ -20,7 +20,7 @@ const ItemGrid = (props) => {
   return (
     <li>
       <NavLink
-        to={`/shop/${id}`}
+        to={`/shop/product/${id}`}
         key={id}
         className={classes["itemgrid__item"]}
         onClick={addToViewed}

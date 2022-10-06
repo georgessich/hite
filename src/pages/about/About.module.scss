@@ -27,12 +27,14 @@
             font-weight: 700;
             font-size: 28px;
             white-space: nowrap;
+            align-self: end;
         }
 
         &-text {
             grid-column: 7/12;
             grid-row: 2/3;
             font-size: 18px;
+            align-self: start;
         }
     }
 

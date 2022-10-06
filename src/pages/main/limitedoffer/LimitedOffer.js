@@ -11,7 +11,7 @@ const LimitedOffer = () => {
           design and high-quality fabric will provide an extra dose of class to
           your space.
         </p>
-        <button className={classes["offer__item-btn"]}>Get the Offer!</button>
+        <NavLink to={`/shop/product/${9}`}><div className={classes["offer__item-btn"]}>Get the Offer!</div></NavLink>
       </div>
     </div>
   );

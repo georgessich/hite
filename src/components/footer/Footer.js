@@ -1,6 +1,4 @@
 import logo from "../../images/logo.png";
-import facebook from "../../images/facebook.png";
-import instagram from "../../images/instagram.png";
 import twitter from "../../images/twitter.png";
 import youtube from "../../images/union.png";
 import classes from "./Footer.module.scss";
@@ -12,15 +10,7 @@ const Footer = () => {
         <img src={logo} alt="Logo" className={classes["footer__social-logo"]} />
         <nav className={classes["footer__social-menu"]}>
           <ul className={classes["footer__social-items"]}>
-            <li className={classes["footer__social-item"]}>
-              <a href="#" className={classes["footer__social-link"]}>
-                <img
-                  src={instagram}
-                  alt="instagram"
-                  className={classes["footer__social-link--img"]}
-                />
-              </a>
-            </li>
+        
             <li className={classes["footer__social-item"]}>
               <a href="#" className={classes["footer__social-link"]}>
                 <img
@@ -39,15 +29,7 @@ const Footer = () => {
                 />
               </a>
             </li>
-            <li className={classes["footer__social-item"]}>
-              <a href="#" className={classes["footer__social-link"]}>
-                <img
-                  src={facebook}
-                  alt="facebook"
-                  className={classes["footer__social-link--img"]}
-                />
-              </a>
-            </li>
+           
           </ul>
         </nav>
       </div>

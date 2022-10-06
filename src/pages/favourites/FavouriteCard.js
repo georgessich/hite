@@ -13,7 +13,7 @@ const FavouriteCard = (props) => {
     <div>
       <NavLink
         className={classes["favourites__item"]}
-        to={`/shop/${id}`}
+        to={`/shop/product/${id}`}
         key={id}
       >
         <img src={image} alt={name} />

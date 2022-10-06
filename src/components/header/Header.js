@@ -3,11 +3,15 @@ import logo from '../../images/logo.png';
 import heart from '../../images/heart.png';
 import basket from '../../images/backet.png';
 import search from '../../images/search.png';
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 const Header = () => {
+  let navigate = useNavigate();
   const cartQuantity = useSelector(state => state.cart.totalQuantity)
-  
+  function changeLocation(placeToGo){
+    navigate(placeToGo, { replace: true });
+    window.location.reload();
+}
   return (
     <header className={classes.header}>
       <div className={classes['header__container']}>
@@ -19,12 +23,12 @@ const Header = () => {
               </NavLink>
             </li>
             <li className={classes["header_left__menu-item"]}>
-              <NavLink to="/shop" className={classes["header_left__menu-link"]}>
+              <NavLink to="/shop/" onClick={() => changeLocation('/shop/')} className={classes["header_left__menu-link"]}>
                 shop
               </NavLink>
             </li>
             <li className={classes["header_left__menu-item"]}>
-              <NavLink to="/about" className={classes["header_left__menu-link"]}>
+              <NavLink to="/about/" className={classes["header_left__menu-link"]}>
                 about
               </NavLink>
             </li>
