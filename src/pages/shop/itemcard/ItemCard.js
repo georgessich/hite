@@ -1,7 +1,7 @@
 import classes from "./ItemCard.module.scss";
 import { useParams } from "react-router-dom";
 import { Rating } from "react-simple-star-rating";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { cartActions } from "../../../store/cart-slice";
 import { favsActions } from "../../../store/favs-slice";
@@ -10,10 +10,10 @@ import RecentPages from "../../../components/recentPages/RecentPages";
 import LoadingSpinner from "../../../components/loadingSpinner/LoadingSpinner";
 import { ReactComponent as Heart } from "./heart.svg";
 import { useGetItemQuery } from "../../../store/fetch-slice";
-import ReactImageMagnify from "react-image-magnify";
-import { Navigation, Pagination, Scrollbar, A11y, Grid } from "swiper";
+
+import { Navigation, Pagination, Scrollbar, A11y } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { GlassMagnifier } from "react-image-magnifiers";
+
 import "swiper/swiper-bundle.css";
 const ItemCard = () => {
   const { slug } = useParams();
@@ -67,10 +67,7 @@ const ItemCard = () => {
           >
             {pageImages.map((image, i) => (
               <SwiperSlide key={i} tag="li">
-                <div style={{ width: "400px" }}>
-                  <GlassMagnifier imageSrc={image} />
-                </div>
-
+                <img style={{width: "450px", height: "600px", objectFit:"fill"}}src={image} alt={image}/>
               </SwiperSlide>
             ))}
           </Swiper>

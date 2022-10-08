@@ -14,6 +14,7 @@ import Payment from "./pages/payment/Payment";
 import Delivery from "./pages/delivery/Delivery";
 import Error from "./pages/error/Error";
 import ScrollToTop from "./components/scrollToTop/ScrollToTop";
+import SearchResult from "./pages/searchResult/SearchResult";
 function App() {
   return (
     <section className="main-section">
@@ -31,6 +32,7 @@ function App() {
           <Route path="/privacy" element={<PrivacyPolicy />} />
           <Route path="/payment" element={<Payment />} />
           <Route path="/delivery" element={<Delivery />} />
+          <Route path="/search/:searchQuery" element={<SearchResult />} />
           <Route path="*" element={<Error />} />
         </Routes>
         <Footer />

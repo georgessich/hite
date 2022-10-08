@@ -4,6 +4,8 @@
   color: $colorButton;
   font-size: 48px;
   text-align: center;
+  display: flex;
+  justify-content: center;
 }
 
 @mixin links {

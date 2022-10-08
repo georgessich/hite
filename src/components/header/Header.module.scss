@@ -9,9 +9,9 @@
     margin-bottom: 20px;
     &__container {
         display: flex;
-        justify-content: space-between;
+        justify-content: center;
         align-items: center;
-        padding-left: 2%;
+        column-gap: 80px;
     }
     &_left__menu {
         &-items {
@@ -28,6 +28,26 @@
         &-items {
             display: flex;
             
+        }
+        &-search {
+
+            &--input {
+                border:none;
+                border-bottom: 1px solid #000;
+                outline: none;
+                font-size: 16px;
+                position: absolute;
+                padding-top: 5px;
+                padding-left: 30px;
+                width: 170px;
+                &::-webkit-search-decoration,
+                &::-webkit-search-cancel-button,
+                &::-webkit-search-results-button,
+                &::-webkit-search-results-decoration {
+                  display: none;
+                }
+            }
+
         }
         &-link {
             margin-right: 88px;
