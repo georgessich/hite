@@ -1,7 +1,7 @@
 import Header from "./components/header/Header";
 import Footer from "./components/footer/Footer";
 import "./App.scss";
-import { Routes, Route } from "react-router-dom";
+import { HashRouter, Route } from "react-router-dom";
 import Main from "./pages/main/Main";
 import Shop from "./pages/shop/Shop";
 import Cart from "./pages/cart/Cart";
@@ -21,7 +21,7 @@ function App() {
     <section className="main-section">
       <ScrollToTop>
         <Header />
-        <Routes>
+        <HashRouter>
           <Route path="/" element={<Main />} />
           <Route exact path="/shop/" element={<Shop />} />
           <Route path="/shop/:categoryName" element={<Shop />} />
@@ -36,7 +36,7 @@ function App() {
           <Route path="/delivery" element={<Delivery />} />
           <Route path="/search/:searchQuery" element={<SearchResult />} />
           <Route path="*" element={<Error />} />
-        </Routes>
+        </HashRouter>
         <Footer />
       </ScrollToTop>
     </section>

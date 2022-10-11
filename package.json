@@ -2,7 +2,7 @@
   "name": "hite",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://georgessich.github.io/hite",
+  "homepage": "https://github.com/georgessich/hite",
   "dependencies": {
     "@apollo/client": "^3.5.6",
     "@reduxjs/toolkit": "^1.7.1",
