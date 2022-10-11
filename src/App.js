@@ -22,19 +22,19 @@ function App() {
       <ScrollToTop>
         <Header />
         <Routes>
-          <Route path="/" element={<Main />} />
-          <Route exact path="/shop/" element={<Shop />} />
-          <Route path="/shop/:categoryName" element={<Shop />} />
-          <Route path="/shop/product/:slug" element={<ItemCard />} />
-          <Route path="/cart" element={<Cart />} />
-          <Route path="/checkout" element={<Checkout />} />
-          <Route path="/success" element={<CheckoutSuccess/>} />
-          <Route path="/favourites" element={<Favourites />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/privacy" element={<PrivacyPolicy />} />
-          <Route path="/payment" element={<Payment />} />
-          <Route path="/delivery" element={<Delivery />} />
-          <Route path="/search/:searchQuery" element={<SearchResult />} />
+          <Route path="/hite/" element={<Main />} />
+          <Route exact path="/hite/shop/" element={<Shop />} />
+          <Route path="/hite/shop/:categoryName" element={<Shop />} />
+          <Route path="/hite/shop/product/:slug" element={<ItemCard />} />
+          <Route path="/hite/cart" element={<Cart />} />
+          <Route path="/hite/checkout" element={<Checkout />} />
+          <Route path="/hite/success" element={<CheckoutSuccess/>} />
+          <Route path="/hite/favourites" element={<Favourites />} />
+          <Route path="/hite/about" element={<About />} />
+          <Route path="/hite/privacy" element={<PrivacyPolicy />} />
+          <Route path="/hite/payment" element={<Payment />} />
+          <Route path="/hite/delivery" element={<Delivery />} />
+          <Route path="/hite/search/:searchQuery" element={<SearchResult />} />
           <Route path="*" element={<Error />} />
         </Routes>
         <Footer />

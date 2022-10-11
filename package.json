@@ -2,6 +2,7 @@
   "name": "hite",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://georgessich.github.io/hite",
   "dependencies": {
     "@apollo/client": "^3.5.6",
     "@reduxjs/toolkit": "^1.7.1",
@@ -9,6 +10,7 @@
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
     "carousel": "0.0.3",
+    "gh-pages": "^4.0.0",
     "graphql": "^16.2.0",
     "minisearch": "^5.0.0",
     "react": "^17.0.2",
@@ -24,6 +26,8 @@
     "web-vitals": "^1.1.2"
   },
   "scripts": {
+    "predeploy": "npm run build", 
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
