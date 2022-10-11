@@ -15,6 +15,7 @@ import Delivery from "./pages/delivery/Delivery";
 import Error from "./pages/error/Error";
 import ScrollToTop from "./components/scrollToTop/ScrollToTop";
 import SearchResult from "./pages/searchResult/SearchResult";
+import CheckoutSuccess from "./pages/checkoutSuccess/CheckoutSuccess";
 function App() {
   return (
     <section className="main-section">
@@ -27,6 +28,7 @@ function App() {
           <Route path="/shop/product/:slug" element={<ItemCard />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/checkout" element={<Checkout />} />
+          <Route path="/success" element={<CheckoutSuccess/>} />
           <Route path="/favourites" element={<Favourites />} />
           <Route path="/about" element={<About />} />
           <Route path="/privacy" element={<PrivacyPolicy />} />

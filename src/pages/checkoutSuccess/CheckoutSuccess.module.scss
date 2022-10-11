@@ -1,0 +1,27 @@
+@import "../../components/variables.module.scss";
+@import "../../components/mixins.module.scss";
+.success {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 100px;
+    margin-bottom: 100px;
+    &-check {
+        fill: $colorButton;
+        height: 100px;
+        width: 100px;
+        margin-bottom: 20px;
+    }
+    &-text {
+        font-size: 32px;
+        font-weight: 700;
+        margin-bottom: 100px;
+    }
+
+    &-link {
+        margin-bottom:50px;
+        @include links;
+        
+    }
+}

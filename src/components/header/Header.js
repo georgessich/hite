@@ -25,7 +25,7 @@ const Header = () => {
   const cartQuantity = useSelector((state) => state.cart.totalQuantity);
   function changeLocation(placeToGo) {
     navigate(placeToGo, { replace: true });
-    window.location.reload();
+    navigate(0)
   }
   const handleEnterKey = (e) => {
     

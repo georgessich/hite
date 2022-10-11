@@ -115,6 +115,7 @@
     grid-column: 2/3;
     display: grid;
     grid-template-columns: repeat(8, 80px);
+    margin-bottom: 50px;
     & input,
     select,
     &-subtitle {
@@ -140,8 +141,6 @@
 
     &-name--input,
     &-name--label,
-    &-country--input,
-    &-country--label,
     &-tel--input,
     &-tel--label,
     &-paytitle,
@@ -157,9 +156,9 @@
     }
     &-email--label,
     &-email--input,
-    &-state--label,
+ 
     &-cvv--label,
-    &-state--input,
+
     &-cvv--input {
       grid-column: 5/9;
     }
@@ -173,7 +172,8 @@
     &-apt--label,
     &-zip--label,
     &-apt--input,
-    &-zip--input {
+    &-zip--input,
+    &-submit {
       grid-column: 6/9;
     }
     &-name--label,
@@ -200,14 +200,7 @@
     &-zip--input {
       grid-row: 8/9;
     }
-    &-country--label,
-    &-state--label {
-      grid-row: 9/10;
-    }
-    &-country--input,
-    &-state--input {
-      grid-row: 10/11;
-    }
+
     &-tel--label {
       grid-row: 11/12;
     }
@@ -254,6 +247,16 @@
     &-valid--input,
     &-cvv--input {
       grid-row: 24/25;
+    }
+
+    &-submit {
+      grid-row: 25/26;
+      @include buttonOrder;
+      cursor: pointer;
+      border:none;
+      font-weight: 700;
+      font-family: $fontDisplay;
+
     }
 
     &-check--label {

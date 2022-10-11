@@ -1,11 +1,8 @@
 import ItemGrid from "./itemgrid/ItemGrid";
-
 import Sidebar from "./sidebar/Sidebar";
 import classes from "./Shop.module.scss";
 import { useState, useEffect } from "react";
-import LoadingSpinner from "../../components/loadingSpinner/LoadingSpinner";
 import { useParams } from "react-router-dom";
-import { useCallback } from "react";
 import ShopQueryWrapper from "../../components/shopQueryWrapper/shopQueryWrapper";
 const Shop = () => {
   const [filteredByCategory, setFilteredByCategory] = useState([]);
@@ -86,7 +83,6 @@ const Shop = () => {
             parseInt(item.price) > priceMin && category.includes(item.category)
         );
         setFilteredByCategory(newProductsList);
-        setSlugName("");
       } else if (
         (priceMin || priceMax) &&
         category.length > 0 &&
@@ -168,10 +164,9 @@ const Shop = () => {
       setIsLoading(false);
       setHttpError(error.message);
     });
-  }, [category, priceMin, priceMax, materials, slugName]);
-  //   if (isLoading) return <LoadingSpinner />;
-  // if (isError) return `Error ${isError.message}`;
+  }, [category, priceMin, priceMax, materials, slugName, categoryName]);
 
+  console.log(slugName);
   return (
     <div className={classes["shop"]}>
       <Sidebar

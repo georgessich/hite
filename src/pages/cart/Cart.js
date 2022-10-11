@@ -38,13 +38,13 @@ const Cart = (props) => {
                 subtotal
               </span>
             </div>
-            {cartItems.map((item) => (
-              <li className={classes["cart__item"]}>
+            {cartItems.map((item, i) => (
+              <li key={i} className={classes["cart__item"]}>
                 <span className={classes["cart__item-name"]}>{item.name}</span>
                 <span className={classes["cart__item-price"]}>
                   ${item.price}
                 </span>
-                <img src={item.image} className={classes["cart__item-img"]} />
+                <img src={item.image} className={classes["cart__item-img"]} alt={item.title}/>
                 <div className={classes["cart__item-buttons"]}>
                   <span className={classes["cart__item-buttons-title"]}>
                     QTY

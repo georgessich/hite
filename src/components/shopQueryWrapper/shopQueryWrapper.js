@@ -20,8 +20,8 @@ export default function ShopQueryWrapper({ loading, error, data, children }) {
   if (data.length > 0) {
     return children;
   } else {
-    return(<div className={classes["shop__wrapper"]}>
+    return(children && (<div className={classes["shop__wrapper"]}>
       <p className={classes["shop__wrapper-text"]}>No items found....</p>
-    </div>)
+    </div>))
   }
 }
