@@ -67,7 +67,7 @@ const ItemCard = () => {
           >
             {pageImages.map((image, i) => (
               <SwiperSlide key={i} tag="li">
-                <img style={{width: "450px", height: "600px", objectFit:"fill"}}src={image} alt={image}/>
+                <img style={{width: "300px", height: "300px", objectFit:"fill"}}src={image} alt={image}/>
               </SwiperSlide>
             ))}
           </Swiper>

@@ -1,7 +1,9 @@
 import Header from "./components/header/Header";
+import { useMediaQuery } from "react-responsive";
+import BurgerHeader from "./components/burgerHeader/BurgerHeader";
 import Footer from "./components/footer/Footer";
 import "./App.scss";
-import { HashRouter, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import Main from "./pages/main/Main";
 import Shop from "./pages/shop/Shop";
 import Cart from "./pages/cart/Cart";
@@ -17,18 +19,19 @@ import ScrollToTop from "./components/scrollToTop/ScrollToTop";
 import SearchResult from "./pages/searchResult/SearchResult";
 import CheckoutSuccess from "./pages/checkoutSuccess/CheckoutSuccess";
 function App() {
+  const isBigScreen = useMediaQuery({ query: "(max-width: 1160px)" });
   return (
     <section className="main-section">
       <ScrollToTop>
-        <Header />
-        <HashRouter>
+        {isBigScreen ? <BurgerHeader /> : <Header/>}
+        <Routes>
           <Route path="/" element={<Main />} />
           <Route exact path="/shop/" element={<Shop />} />
           <Route path="/shop/:categoryName" element={<Shop />} />
           <Route path="/shop/product/:slug" element={<ItemCard />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/checkout" element={<Checkout />} />
-          <Route path="/success" element={<CheckoutSuccess/>} />
+          <Route path="/success" element={<CheckoutSuccess />} />
           <Route path="/favourites" element={<Favourites />} />
           <Route path="/about" element={<About />} />
           <Route path="/privacy" element={<PrivacyPolicy />} />
@@ -36,7 +39,7 @@ function App() {
           <Route path="/delivery" element={<Delivery />} />
           <Route path="/search/:searchQuery" element={<SearchResult />} />
           <Route path="*" element={<Error />} />
-        </HashRouter>
+        </Routes>
         <Footer />
       </ScrollToTop>
     </section>

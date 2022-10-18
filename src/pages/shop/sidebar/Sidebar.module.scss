@@ -3,6 +3,10 @@
     margin-right: 50px;
     grid-column: 1/2;
     align-self: start;
+    @media(max-width:740px) {
+        align-self: center;
+        margin-right: 0;
+    }
     &__title {
         color: rgba($colorDisplay, .5);
         font-weight: 600;

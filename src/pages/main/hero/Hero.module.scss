@@ -17,11 +17,17 @@
         font-weight: 400;
         color: $colorDisplay;
         margin-bottom: 8px;
+        @media(max-width:530px){
+            font-size: 55px;
+        }
     }
 
     &__subtitle {
         font-size: 24px;
         margin-bottom: 76px;
+        @media(max-width:530px){
+            font-size: 20px;
+        }
     }
 
     &__btn {

@@ -7,11 +7,18 @@ flex-direction: column;
 justify-content: center;
 padding-left: 10%;
 padding-top: 76px;
+@media(max-width:1050px) {
+  background-position: center center;
+  box-shadow: inset 0 0 0 1000px rgba(0,0,0,.2);
+}
   &__title {
     font-family: $fontHeader;
     font-size: 64px;
     color: $colorYellow;
     margin-bottom: 120px;
+    @media(max-width:500px) {
+      margin-bottom: 20px;
+    }
   }
   &__item {
       &-title {
@@ -19,12 +26,23 @@ padding-top: 76px;
           color: $colorDisplay;
           font-weight: 600;
           margin-bottom: 20px;
+          @media(max-width: 1050px){
+            color: #fff;
+          }
+          
       }
 
       &-descr {
           font-size: 16px;
           width: 437px;
           margin-bottom: 52px;
+          @media(max-width: 1050px){
+            color: #fff;
+            // width: fit-content;
+          }
+          @media(max-width:500px) {
+            width: fit-content;
+          }
       }
 
       &-btn {
@@ -37,6 +55,9 @@ padding-top: 76px;
           line-height: 24px;
           margin-bottom: 390px;
           width: 170px;
+          @media(max-width:500px) {
+            margin-bottom: 80px;
+          }
       }
   }
 }
