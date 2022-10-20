@@ -71,6 +71,9 @@
     color: #fff;
     font-weight: 700;
     text-align: center;
+    @media(max-width: 900px){
+      font-size: 32px;
+    }
   }
 }
 

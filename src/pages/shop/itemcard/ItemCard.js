@@ -54,8 +54,8 @@ const ItemCard = () => {
   };
   return (
     <div style={{marginTop:"50px"}}>
-      <div style={{ display: "flex", width:"50%", marginLeft:"25%", marginBottom:"50px" }}>
-        <div style={{ width: "400px" }}>
+      <div className={classes['itemcard']}>
+        <div className={classes['itemcard__container']}>
           <Swiper
             slidesPerView={1}
             modules={[Navigation, Pagination, Scrollbar, A11y]}
@@ -67,7 +67,7 @@ const ItemCard = () => {
           >
             {pageImages.map((image, i) => (
               <SwiperSlide key={i} tag="li">
-                <img style={{width: "300px", height: "300px", objectFit:"fill"}}src={image} alt={image}/>
+                <img style={{width: "400px", height: "600px", objectFit:"fill"}}src={image} alt={image}/>
               </SwiperSlide>
             ))}
           </Swiper>

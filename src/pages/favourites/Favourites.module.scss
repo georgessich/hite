@@ -9,10 +9,15 @@
   &__items {
     display: grid;
     grid-template-columns: repeat(3, min-content);
-    align-items: center;
+    justify-content: center;
     gap: 80px;
-    padding-left: 15%;
     margin-bottom: 50px;
+    @media(max-width:1150px) {
+      grid-template-columns: repeat(2, min-content);
+    }
+    @media(max-width:680px) {
+      grid-template-columns: repeat(1, min-content);
+    }
   }
 
   &__item {

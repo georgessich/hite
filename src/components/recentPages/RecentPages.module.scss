@@ -1,15 +1,24 @@
 @import "../../components/variables.module.scss";
 @import "../../components/mixins.module.scss";
 .recently {
-  padding-left: 15%;
+
   display: grid;
   justify-content: flex-start;
   align-items: center;
-  width:80%;
+  padding-left: 15%;
+  @media(max-width:1000px) {
+    padding-left: 10%;
+  }
+  @media(max-width:810px) {
+    padding-left: 5%;
+  }
   &__title {
     @include recentTitle;
     grid-row: 1/2;
     margin-bottom: 0;
+  }
+  @media(max-width:580px) {
+    display: none;
   }
 
   &__items {

@@ -6,13 +6,31 @@
       width: 300px;
       height: 407px;
       object-fit: cover;
+      @media (max-width:1310px) {
+        width: 230px;
+        height: 300px;
+      }
+      @media(max-width:1000px) {
+        width: 180px;
+        height: 225px;
+      }
+      @media(max-width:800px) {
+        width: 130px;
+        height: 160px;
+      }
     }
     &-title {
       color: $colorDisplay;
       font-size: 24px;
+      @media(max-width:800px) {
+        font-size: 16px;
+      }
     }
     &-price {
       font-weight: 600;
       font-size: 36px;
       color: #000;
+      @media(max-width:800px) {
+        font-size: 24px;
+      }
     }}

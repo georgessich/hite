@@ -1,8 +1,24 @@
 @import "../../../components/variables.module.scss";
 .itemcard {
- 
-
-  
+  display: flex;
+  width: 50%;
+  margin-left: 25%;
+  margin-bottom: 50px;
+  @media(max-width:1230px) {
+    width: auto;
+    margin: 0 auto;
+    padding: 5%;
+  }
+  @media(max-width:870px) {
+    flex-direction: column;
+    align-items: center;
+  }
+  &__container {
+    width: 400px;
+    @media(max-width:480px) {
+      width: 280px;
+    }
+  }
   &__right {
     padding-left: 50px;
     grid-column: 3 / 10;
@@ -11,6 +27,9 @@
     grid-row-gap: 5px;
     align-self: start;
     z-index: 1000;
+    @media(max-width:450px){
+      padding: 0;
+    }
     &-btn {
       grid-row: 3/4;
       grid-column: 3/5;
